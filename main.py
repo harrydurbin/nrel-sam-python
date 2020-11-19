@@ -1,13 +1,12 @@
 '''
 This script is used to create power simulations in NREL SAM and generator hourly shape output.
-Seattle City Light
 Harry Durbin
 October 2020
 
 Requirements for running:
 + python must be 64 bit
 + pip install nrel-pysam
-+ create a project in SAM, set wind turbine model, and export as json file into folder
++ create a project in SAM and export as json file into folder
 + set the 'SAM_EXPORT_JSON' file path to the json file you just export
 
 To run:
@@ -30,10 +29,7 @@ from SAMSolarModelSimulator import SAMSolarModelSimulator
 from SAMWindModelSimulator import SAMWindModelSimulator
 from SAMOutputAnalysis import SAMOutputAnalysis
 
-SAM_EXPORT_JSON = r"C:\Users\NissleP\Desktop\Solar\HarryPaulSAMWindExample\stateline.json"
-#SAM_EXPORT_JSON = r"C:\Users\NissleP\Desktop\Solar\HarryPaulSAMTestExample\untitled.json"
-#SAM_EXPORT_JSON = r"O:\POOL\PRIVATE\RPFA\2020 IRP\CPM\NREL_SAM_Python\sam_export_solar_example\untitled.json"
-#SAM_EXPORT_JSON = r"O:\POOL\PRIVATE\RPFA\2020 IRP\CPM\NREL_SAM_Python\sam_export_wind_example\wind_example.json"
+SAM_EXPORT_JSON = r"/home/hd/Desktop/SCL/NREL_SAM_Python/sam_export_wind_example/wind_example.json"
 
 if __name__ == "__main__":
 

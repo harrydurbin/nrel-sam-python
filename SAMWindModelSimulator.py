@@ -1,6 +1,5 @@
 '''
 This script is used to create wind power simulations in NREL SAM and generator hourly shape output.
-Seattle City Light
 Harry Durbin
 October 2020
 
