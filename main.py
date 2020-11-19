@@ -29,12 +29,13 @@ from SAMSolarModelSimulator import SAMSolarModelSimulator
 from SAMWindModelSimulator import SAMWindModelSimulator
 from SAMOutputAnalysis import SAMOutputAnalysis
 
-SAM_EXPORT_JSON = r"/home/hd/Desktop/SCL/NREL_SAM_Python/sam_export_wind_example/wind_example.json"
+# SAM_EXPORT_JSON = "/home/hd/git/nrel-sam-python/sam_export_wind_example/wind_example.json"
+SAM_EXPORT_JSON = '/home/hd/git/nrel-sam-python/sam_export_solar_example/untitled.json'
 
 if __name__ == "__main__":
 
     ## example - creating a solar model
-    # SAM_MODEL = SAMSolarModelSimulator(address='Yakima, WA',sam_export_json=SAM_EXPORT_JSON)
+    SAM_MODEL = SAMSolarModelSimulator(address='Yakima, WA',sam_export_json=SAM_EXPORT_JSON)
     #SAM_MODEL = SAMSolarModelSimulator(lat=46.067,lon=-118.339,sam_export_json=SAM_EXPORT_JSON)
 #    SAM_MODEL1 = SAMSolarModelSimulator(lat=46.067+0.045,lon=-118.339,sam_export_json=SAM_EXPORT_JSON)
 #    SAM_MODEL2 = SAMSolarModelSimulator(lat=46.067-0.045,lon=-118.339,sam_export_json=SAM_EXPORT_JSON)
@@ -42,7 +43,7 @@ if __name__ == "__main__":
 #    SAM_MODEL4 = SAMSolarModelSimulator(lat=46.067,lon=-118.339-0.045,sam_export_json=SAM_EXPORT_JSON)
 
     ## example - creating a wind model
-    SAM_MODEL = SAMWindModelSimulator(address='Walla Walla, WA',sam_export_json=SAM_EXPORT_JSON, hubheight=60)
+    # SAM_MODEL = SAMWindModelSimulator(address='Walla Walla, WA',sam_export_json=SAM_EXPORT_JSON, hubheight=60)
     # SAM_MODEL = SAMWindModelSimulator(lat=46.067,lon=-118.339,sam_export_json=SAM_EXPORT_JSON, hubheight=40)
     # SAM_MODEL1 = SAMWindModelSimulator(lat=46.067+0.045,lon=-118.339,sam_export_json=SAM_EXPORT_JSON, hubheight=40)
     # SAM_MODEL2 = SAMWindModelSimulator(lat=46.067-0.045,lon=-118.339,sam_export_json=SAM_EXPORT_JSON, hubheight=40)

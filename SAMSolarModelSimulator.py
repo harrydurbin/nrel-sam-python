@@ -176,8 +176,8 @@ class SAMSolarModelSimulator(object):
         grid.execute()
         self.json_dict = pv.Outputs.export()
 #         print(self.json_dict.keys())
-        self.df_output = pd.DataFrame(self.json_dict['gen'])
-        self.df_output.columns = [self.year]
+        self.df_output = pd.DataFrame()
+        self.df_output[self.year] = self.json_dict['gen'] 
         for col in self.df_output.columns:
             self.df_output[col] = preprocessing.minmax_scale(self.df_output[col].values.reshape(1, -1), feature_range=(0, 1), axis=1, copy=True).T
 

@@ -10,7 +10,7 @@ from sklearn import preprocessing
 from IPython.core.display import display,HTML
 import datetime
 
-display(HTML("<style>.container {width:98% !important;}</style>"))
+# display(HTML("<style>.container {width:98% !important;}</style>"))
 warnings.filterwarnings('ignore')
 plt.style.use('fivethirtyeight')
 pd.set_option('display.max_columns', None)

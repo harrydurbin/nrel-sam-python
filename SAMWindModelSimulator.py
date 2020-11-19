@@ -29,7 +29,6 @@ from sklearn import preprocessing
 import numpy as np
 import sys, os
 import PySAM.Windpower as Windpower
-# import PySAM.Pvwattsv7 as PVWatts
 import PySAM.Grid as Grid
 from geopy.geocoders import Nominatim
 import utm
@@ -46,7 +45,7 @@ class SAMWindModelSimulator(object):
     HUB_HEIGHT = 60 # wind turbine hub height in meters
     API_KEY = 'c0lweNf0IyZOUwmptfTgAMXvE35ym7SHuh0QxG2w' # https://developer.nrel.gov/signup/
     EMAIL = 'harry.durbin@seattle.gov' # email associated with api
-    SAM_EXPORT_JSON = r"O:\POOL\PRIVATE\RPFA\2020 IRP\CPM\NREL_SAM_Python\sam_export_wind_example\wind_example.json"
+    SAM_EXPORT_JSON = '/home/hd/git/nrel-sam-python/sam_export_wind_example/wind_example.json'
     ADDRESS = None
 
     def __init__(self,lat=LAT,
@@ -165,9 +164,10 @@ class SAMWindModelSimulator(object):
         wp.execute()
         grid.execute()
         self.json_dict = wp.Outputs.export()
-#         print(self.json_dict.keys())
-        self.df_output = pd.DataFrame(self.json_dict['gen'])
-        self.df_output.columns = [self.year]
+        # print(self.json_dict.keys())
+        # print (self.json_dict['gen'])
+        self.df_output = pd.DataFrame()
+        self.df_output[self.year] = self.json_dict['gen']
         for col in self.df_output.columns:
             self.df_output[col] = preprocessing.minmax_scale(self.df_output[col].values.reshape(1, -1), feature_range=(0, 1), axis=1, copy=True).T
         if self.df_all is None:
